@@ -13,11 +13,64 @@ _關於我_ <!-- .element: style="font-size:1.2rem;margin:-.5rem 1rem 1rem" -->
 ## 毛哥 EM<!-- .element: style="font-size:3.3rem;" -->
 
 
--   九年網頁開發經驗<!-- .element: style="font-size:1.75rem;margin-top:1rem" -->
+-   十年網頁開發經驗<!-- .element: style="font-size:1.75rem;margin-top:1rem" -->
 -   Awwwards 常態評審<!-- .element: style="font-size:1.75rem;" -->
 -   英文辯士<!-- .element: style="font-size:1.75rem;" -->
 
 </div></div>
+
+---
+
+## IDE
+
+整合式開發環境
+
+---
+
+## 視覺化工作室程式碼
+
+![](img/HTML/download.webp) <!-- .element: height="400px" -->
+
+--
+
+### 開啟資料夾
+
+![](img/HTML/folder.webp)
+
+--
+
+### 安裝擴充功能
+
+![](img/HTML/live.webp)
+
+
+--
+
+### 建立第一個網頁
+
+![](img/HTML/file.webp)
+
+---
+
+# 基本架構
+
+emmet: `!` + `tab`
+
+```html
+<!DOCTYPE html> <!-- HTML5 -->
+<html lang="en"> <!-- 語言 -->
+  <head> <!-- 不會直接顯示在網頁中 -->
+      <meta charset="UTF-8" /> <!-- 編碼方式 -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <!-- 適應不同大小的螢幕 -->
+      <title>Document</title> <!-- 網頁標題 -->
+  </head>
+  <body>
+      <!-- 內容直接顯示在網頁中 -->
+  </body>
+</html>
+```
+
 
 ---
 
@@ -34,14 +87,6 @@ _網站講白就是要用瀏覽器打開的 Word 檔_
 超文本標記語言 HyperText Markup Language  
 作為網站的骨架  
 ![](img/HTML/骨架、外觀、行為.png) <!-- .element: height="400px" -->
-
----
-
-## Codepen
-
-網頁的 Google Docs
-
-網址：[pen.new](https://pen.new)
 
 ---
 
@@ -230,7 +275,22 @@ H<sup>+</sup> CO<sub>2</sub>
 
 [Google](https://www.google.com)
 
+--
 
+## 絕對路徑與相對路徑
+
+* **絕對路徑**：這個檔案在本機端或是網路上的絕對位置
+* **相對路徑**：相對於這個檔案的位置
+  * 上一層：`../`
+
+```html
+<img src="/images/logo.png" />
+<!-- 目前的目錄下的檔案 -->
+<img src="../test/images/logo.png" />
+<!-- 上一層目錄下的圖片檔案 -->
+```
+
+<!-- .slide: data-transition="fade-out" -->
 --
 
 ### 新分頁開啟
@@ -406,74 +466,7 @@ H<sup>+</sup> CO<sub>2</sub>
     <input type="submit" value="搜尋" />
 </form>
 
----
 
-## IDE
-
-整合式開發環境
-
----
-
-## 視覺化工作室程式碼
-
-![](img/HTML/download.webp) <!-- .element: height="400px" -->
-
---
-
-### 開啟資料夾
-
-![](img/HTML/folder.webp)
-
---
-
-### 安裝擴充功能
-
-![](img/HTML/live.webp)
-
-
---
-
-### 建立第一個網頁
-
-![](img/HTML/file.webp)
-
----
-
-# 基本架構
-
-emmet: `!` + `tab`
-
-```html
-<!DOCTYPE html> <!-- HTML5 -->
-<html lang="en"> <!-- 語言 -->
-  <head> <!-- 不會直接顯示在網頁中 -->
-      <meta charset="UTF-8" /> <!-- 編碼方式 -->
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <!-- 適應不同大小的螢幕 -->
-      <title>Document</title> <!-- 網頁標題 -->
-  </head>
-  <body>
-      <!-- 內容直接顯示在網頁中 -->
-  </body>
-</html>
-```
-
----
-
-## 絕對路徑與相對路徑
-
-* **絕對路徑**：這個檔案在本機端或是網路上的絕對位置
-* **相對路徑**：相對於這個檔案的位置
-  * 上一層：`../`
-
-```html
-<img src="/images/logo.png" />
-<!-- 目前的目錄下的檔案 -->
-<img src="../test/images/logo.png" />
-<!-- 上一層目錄下的圖片檔案 -->
-```
-
-<!-- .slide: data-transition="fade-out" -->
 ---
 
 <!-- .slide: data-transition="fade-in" -->
