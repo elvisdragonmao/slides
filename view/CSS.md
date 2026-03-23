@@ -952,7 +952,7 @@ justify-content: space-between; /* 水平均分 */
 justify-content: space-around; /* 水平環繞均分 */
 ```
 
-![](<img/CSS/justify-content.svg) <!-- .element: height="220px" -->
+![](<img/CSS/justify-content.svg>) <!-- .element: height="220px" -->
 
 --
 
@@ -964,7 +964,7 @@ justify-content: space-around; /* 水平環繞均分 */
 - `stretch`
 - `baseline`
 
-![](<img/CSS/align-items.svg) <!-- .element: height="220px" -->
+![](<img/CSS/align-items.svg>) <!-- .element: height="220px" -->
 
 --
 
@@ -996,7 +996,7 @@ align-self: flex-end;
 - 預設值為 `0`
 - 1 以上會依照比例分配剩餘空間
 
-![](<img/CSS/flex-grow.svg) <!-- .element: height="220px" -->
+![](<img/CSS/flex-grow.svg>) <!-- .element: height="220px" -->
 
 --
 
