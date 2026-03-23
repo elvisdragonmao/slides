@@ -22,7 +22,7 @@
 4. 建立 `<h1>` 與 `<style>`
 5. 用 Live Server / Go Live 開瀏覽器開始寫 CSS
 
-![](<img/CSS/Frame_11.jpg) <!-- .element: height="320px" -->
+![](<img/CSS/Frame_11.jpg>) <!-- .element: height="320px" -->
 
 --
 
@@ -1231,7 +1231,7 @@ body {
 - 建築物是 `relative`
 - 屋頂是 `absolute`
 
-![](<img/CSS/image_1.jpg) <!-- .element: height="240px" -->
+![](<img/CSS/image_1.jpg>) <!-- .element: height="240px" -->
 
 ---
 
