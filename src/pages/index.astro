@@ -27,7 +27,9 @@ const categories = [{ id: "all", label: "所有分類" }, ...uniqueTags.map(t =>
 		<header class="site-header">
 			<div class="header-meta mono">
 				<span class="meta-label">REV</span>
-				<span>{new Date().getFullYear()}.{(new Date().getMonth() + 1).toString().padStart(2, "0")}</span>
+				<span>
+					{new Date().getFullYear()}.{(new Date().getMonth() + 1).toString().padStart(2, "0")}
+				</span>
 				<span class="sep">·</span>
 				<span class="meta-label">AUTHOR</span>
 				<span>{author.name}</span>
@@ -45,24 +47,34 @@ const categories = [{ id: "all", label: "所有分類" }, ...uniqueTags.map(t =>
 			</div>
 
 			<p class="header-desc">
-				簡報均採用創用 CC「<a href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" target="_blank" rel="noopener">姓名標示 4.0 國際</a>」授權。 部分會重複使用於不同課程，持續更新。
+				簡報均採用創用 CC「
+				<a href="https://creativecommons.org/licenses/by/4.0/deed.zh-hant" target="_blank" rel="noopener">
+					姓名標示 4.0 國際
+				</a>
+				」授權。 部分會重複使用於不同課程，持續更新。
 			</p>
 
 			<div class="stats-row">
 				<div class="stat">
-					<span class="stat-num mono" id="stat-total">{slides.length}</span>
+					<span class="stat-num mono" id="stat-total">
+						{slides.length}
+					</span>
 					<span class="stat-label">簡報數</span>
 				</div>
-				<div class="stat-divider" aria-hidden="true">·</div>
+				<div class="stat-divider" aria-hidden="true">
+					·
+				</div>
 				<div class="stat">
-					<span class="stat-num mono" id="stat-cats">{categories.length - 1}</span>
+					<span class="stat-num mono" id="stat-cats">
+						{categories.length - 1}
+					</span>
 					<span class="stat-label">分類</span>
 				</div>
-				<div class="stat-divider" aria-hidden="true">·</div>
+				<div class="stat-divider" aria-hidden="true">
+					·
+				</div>
 				<div class="stat">
-					<span class="stat-num mono">
-						{[...new Set(slides.map(s => s.year))].length}
-					</span>
+					<span class="stat-num mono">{[...new Set(slides.map(s => s.year))].length}</span>
 					<span class="stat-label">年份跨度</span>
 				</div>
 			</div>
@@ -73,32 +85,41 @@ const categories = [{ id: "all", label: "所有分類" }, ...uniqueTags.map(t =>
 			<nav class="filter-bar" aria-label="分類篩選">
 				<span class="filter-label mono">FILTER /</span>
 				<div class="filter-btns" role="tablist">
-					{
-						categories.map((cat, i) => (
-							<button class={`filter-btn${i === 0 ? " active" : ""}`} data-category={cat.id} role="tab" aria-selected={i === 0 ? "true" : "false"}>
-								{cat.label}
-							</button>
-						))
-					}
+					{categories.map((cat, i) => (
+						<button class={`filter-btn${i === 0 ? " active" : ""}`} data-category={cat.id} role="tab" aria-selected={i === 0 ? "true" : "false"}>
+							{cat.label}
+						</button>
+					))}
 				</div>
 			</nav>
 
 			<!-- Grid -->
 			<div class="slides-grid" id="slides-grid">
-				{slides.map((slide, i) => <SlideCard slide={slide} index={i} />)}
+				{slides.map((slide, i) => (
+					<SlideCard slide={slide} index={i} />
+				))}
 			</div>
 
-			<p class="no-results hidden" id="no-results">此分類目前沒有簡報。</p>
+			<p class="no-results hidden" id="no-results">
+				此分類目前沒有簡報。
+			</p>
 		</main>
 
 		<footer class="site-footer">
 			<div class="footer-line"></div>
 			<div class="footer-content">
-				<span class="mono footer-copy">© {new Date().getFullYear()} <a href={author.url}>{author.fullName}</a></span>
+				<span class="mono footer-copy">
+					{`© ${new Date().getFullYear()} `}
+					<a href={author.url}>{author.fullName}</a>
+				</span>
 				<span class="footer-links">
-					<a href={author.blog} target="_blank" rel="noopener">部落格</a>
+					<a href={author.blog} target="_blank" rel="noopener">
+						部落格
+					</a>
 					<span aria-hidden="true">·</span>
-					<a href="https://github.com/Edit-Mr/slides" target="_blank" rel="noopener">GitHub</a>
+					<a href="https://github.com/Edit-Mr/slides" target="_blank" rel="noopener">
+						GitHub
+					</a>
 				</span>
 			</div>
 		</footer>

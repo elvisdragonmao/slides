@@ -245,7 +245,7 @@ font-weight: 900;
 
 ## text-decoration
 
-常用於消除 [超連結]() 的藍色底線
+常用於消除 [超連結](<>) 的藍色底線
 
 ```css {none|3}
 text-decoration: underline; /* 底線 */

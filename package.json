@@ -12,20 +12,20 @@
 		"preview": "astro preview"
 	},
 	"dependencies": {
-		"@slidev/cli": "^52.14.1",
+		"@slidev/cli": "^52.19.2",
 		"@slidev/theme-default": "^0.25.0",
-		"astro": "^6.0.2",
+		"astro": "^7.3.2",
 		"codemirror-theme-vars": "^0.1.2",
 		"prism-theme-vars": "^0.2.5",
-		"slidev-theme-dracula": "^0.2.0",
+		"slidev-theme-dracula": "^0.2.5",
 		"theme-vitesse": "^1.0.0"
 	},
 	"devDependencies": {
-		"@slidev/types": "^52.14.1",
+		"@slidev/types": "^52.19.2",
 		"husky": "^9.1.7",
-		"playwright-chromium": "^1.58.2",
-		"prettier": "^3.8.1",
-		"prettier-plugin-astro": "^0.14.1",
+		"playwright-chromium": "^1.63.0",
+		"prettier": "^3.9.6",
+		"prettier-plugin-astro": "^1.0.0",
 		"prettier-plugin-organize-imports": "^4.3.0",
 		"prettier-plugin-packagejson": "^3.0.2",
 		"prettier-plugin-slidev": "^1.0.5"
