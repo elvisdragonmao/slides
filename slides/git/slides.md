@@ -27,7 +27,7 @@ class: say
 這份簡報可以搭配文章一起服用
 
 <div class="sub mt-6">
-<a href="https://emtech.cc/p/github-and-git/">emtech.cc/p/github-and-git</a>
+<a href="https://emtech.cc/course/frontend/git/">emtech.cc/course/frontend/git</a>
 </div>
 
 ---
