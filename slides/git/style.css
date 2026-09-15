@@ -1,0 +1,276 @@
+/* Git 簡報專用：設計 token、共用排版、v-click 動態 */
+
+:root {
+	--ease: cubic-bezier(0.22, 1, 0.36, 1);
+	--ease-io: cubic-bezier(0.65, 0, 0.35, 1);
+	--spring: cubic-bezier(0.34, 1.4, 0.64, 1);
+	--surface: hsl(231 15% 22%);
+	--surface-strong: hsl(231 15% 26%);
+	--hairline: rgb(255 255 255 / 0.08);
+	--hairline-strong: rgb(255 255 255 / 0.18);
+	--ink: hsl(231 15% 10%);
+	--dim: hsl(60 30% 96% / 0.72);
+	--mono: var(--slidev-code-font-family, "JetBrainsMono", ui-monospace, monospace);
+}
+
+/* v-click：淡入、輕微上浮、去模糊 */
+.slidev-vclick-target {
+	transition:
+		opacity 0.5s var(--ease),
+		transform 0.6s var(--ease),
+		filter 0.5s var(--ease);
+}
+
+.slidev-vclick-hidden {
+	transform: translateY(10px);
+	filter: blur(4px);
+}
+
+#app #slide-content {
+	/* 大字陳述：一張投影片只講一句話 */
+	.say p {
+		font-size: 2.1rem;
+		line-height: 1.55;
+		font-weight: 600;
+		margin: 0;
+	}
+
+	.say p + p {
+		margin-top: 0.9rem;
+	}
+
+	.say blockquote {
+		display: inline-block;
+		font-size: 2.1rem;
+		text-align: left;
+	}
+
+	.say h1 {
+		font-size: 4.5rem;
+		line-height: 1.2;
+	}
+
+	.say .sub,
+	.sub {
+		font-size: 1.15rem;
+		font-weight: 400;
+		color: var(--comment);
+	}
+
+	.eyebrow {
+		font-family: var(--mono);
+		font-size: 0.78rem;
+		letter-spacing: 0.16em;
+		text-transform: uppercase;
+		color: var(--comment);
+		margin-bottom: 0.5rem;
+	}
+
+	.lead {
+		font-size: 1.25rem;
+		line-height: 1.7;
+		color: var(--dim);
+	}
+
+	.muted {
+		color: var(--comment);
+	}
+
+	.dim {
+		color: var(--dim);
+	}
+
+	.mono {
+		font-family: var(--mono);
+	}
+
+	.card {
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+		border-radius: 18px;
+		padding: 1.1rem 1.35rem;
+
+		h3 {
+			margin: 0 0 0.35rem;
+			font-size: 1.15rem;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		ul {
+			margin: 0.5rem 0 0;
+		}
+	}
+
+	.card-icon {
+		font-size: 1.6rem;
+		color: var(--purple);
+		margin-bottom: 0.6rem;
+	}
+
+	.pill {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4em;
+		padding: 0.2em 0.75em;
+		border-radius: 999px;
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+		font-family: var(--mono);
+		font-size: 0.85em;
+		white-space: nowrap;
+	}
+
+	.shot {
+		border-radius: 14px;
+		border: 1px solid var(--hairline);
+		box-shadow: 0 24px 60px -24px rgb(0 0 0 / 0.7);
+	}
+
+	kbd {
+		font-family: var(--mono);
+		font-size: 0.8em;
+		padding: 0.1em 0.5em;
+		border-radius: 6px;
+		border: 1px solid var(--hairline-strong);
+		border-bottom-width: 2px;
+		background: var(--surface);
+	}
+
+	/* 對照表 */
+	.table-clean table {
+		width: 100%;
+		border-collapse: collapse;
+		font-size: 1rem;
+
+		th {
+			text-align: left;
+			font-weight: 400;
+			font-size: 0.8rem;
+			color: var(--comment);
+			letter-spacing: 0.08em;
+			padding: 0 1rem 0.5rem;
+			border-bottom: 1px solid var(--hairline-strong);
+		}
+
+		td {
+			padding: 0.5rem 1rem;
+			border-bottom: 1px solid var(--hairline);
+		}
+
+		tr:last-child td {
+			border-bottom: none;
+		}
+	}
+
+	/* 聊天泡泡（Code Review 留言） */
+	.bubble {
+		display: inline-block;
+		padding: 0.6rem 1rem;
+		border-radius: 16px 16px 16px 4px;
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+	}
+
+	.say .ask p {
+		font-size: 1.7rem;
+		margin: 0.35rem 0;
+	}
+
+	.big {
+		font-size: 2.6rem;
+		font-weight: 700;
+		line-height: 1.3;
+	}
+
+	.num {
+		font-size: 2.4rem;
+		font-weight: 700;
+		color: var(--purple);
+	}
+
+	/* 同一格輪流出現的說明文字，跟著 $clicks 切換 */
+	.swap {
+		display: grid;
+
+		> * {
+			grid-area: 1 / 1;
+		}
+	}
+
+	.swap-item {
+		margin: 0;
+		opacity: 0;
+		transform: translateY(8px);
+		filter: blur(4px);
+		transition:
+			opacity 0.4s var(--ease),
+			transform 0.5s var(--ease),
+			filter 0.4s var(--ease);
+	}
+
+	.swap-item.is-on {
+		opacity: 1;
+		transform: none;
+		filter: none;
+	}
+
+	/* git pull = 取得 + 整合 */
+	.pull-eq {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 1.2rem;
+		font-size: 1.25rem;
+
+		.card {
+			text-align: left;
+		}
+	}
+
+	/* Squash 前後的 Commit 清單 */
+	.squash-list > div {
+		padding: 0.18rem 0;
+		transition:
+			opacity 0.5s var(--ease),
+			color 0.5s;
+	}
+
+	.squash-list.is-squashed > div:not(.squash-result) {
+		opacity: 0.35;
+		text-decoration: line-through;
+	}
+
+	.squash-list .squash-result {
+		margin-top: 0.6rem;
+		font-weight: 700;
+		color: var(--green);
+		opacity: 0;
+	}
+
+	.squash-list.is-done .squash-result {
+		opacity: 1;
+		text-decoration: none;
+	}
+
+	/* 一個 Commit 接一個 Commit */
+	.chain {
+		display: flex;
+		justify-content: center;
+		gap: 28px;
+
+		> div {
+			width: 110px;
+		}
+	}
+
+	.good {
+		color: var(--green);
+	}
+
+	.bad {
+		color: var(--red);
+	}
+}

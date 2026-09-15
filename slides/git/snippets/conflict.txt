@@ -1,0 +1,5 @@
+<<<<<<< HEAD
+Hello from main!
+=======
+Hello from dev!
+>>>>>>> dev
