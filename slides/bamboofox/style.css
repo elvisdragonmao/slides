@@ -1,0 +1,340 @@
+/* BambooFox 迎新茶會：品牌配色與背景 */
+
+:root {
+	/* 取自 bg.png 的橘藍配色 */
+	--background: #05070c;
+	--current-line: #121826;
+	--foreground: #e9edf5;
+	--comment: #7c8aa5;
+	--cyan: #5aa9ff;
+	--green: #57d6a8;
+	--orange: #ff5a1f;
+	--pink: #ff8a5c;
+	--purple: #ff7a3c;
+	--red: #ff4d4d;
+	--yellow: #ffb057;
+
+	--bf-orange: #ff5a1f;
+	--bf-blue: #3b7ddd;
+	--hairline: rgb(255 255 255 / 0.1);
+	--hairline-strong: rgb(255 255 255 / 0.22);
+	--surface: rgb(255 255 255 / 0.04);
+	--dim: rgb(233 237 245 / 0.72);
+	--ease: cubic-bezier(0.22, 1, 0.36, 1);
+	--mono: var(--slidev-code-font-family, "JetBrainsMono", ui-monospace, monospace);
+}
+
+/* 背景圖：內容頁用 bg.png，封面與章節用裝飾較多的 cover-bg.png */
+#app #slide-content {
+	background-image: url("./bg.png");
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	position: relative;
+
+	/* 壓暗背景，文字在狐狸與竹葉上也讀得到 */
+	&::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background: rgb(5 7 12 / 0.55);
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	.slidev-layout {
+		position: relative;
+		z-index: 1;
+	}
+
+	.slidev-layout.cover,
+	.slidev-layout.section,
+	.slidev-layout.fact {
+		background-image: url("./cover-bg.png");
+		background-size: cover;
+		background-position: center;
+	}
+
+	/* v-click：淡入 + 輕微上浮 */
+	.slidev-vclick-target {
+		transition:
+			opacity 0.5s var(--ease),
+			transform 0.6s var(--ease),
+			filter 0.5s var(--ease);
+	}
+
+	.slidev-vclick-hidden {
+		transform: translateY(10px);
+		filter: blur(4px);
+	}
+
+	/* 內容往右讓開左下角的狐狸 */
+	.slidev-layout.intro,
+	.slidev-layout.default {
+		padding-left: 8rem;
+	}
+
+	h1,
+	h2,
+	h3 {
+		color: var(--foreground);
+	}
+
+	h2 {
+		font-size: 2.1rem;
+		letter-spacing: 0.01em;
+	}
+
+	strong {
+		color: var(--bf-orange);
+	}
+
+	em {
+		color: var(--cyan);
+		font-style: normal;
+	}
+
+	.eyebrow {
+		font-family: var(--mono);
+		font-size: 0.78rem;
+		letter-spacing: 0.22em;
+		text-transform: uppercase;
+		color: var(--bf-orange);
+		margin-bottom: 0.6rem;
+	}
+
+	.eyebrow-blue {
+		color: var(--bf-blue);
+	}
+
+	.lead {
+		font-size: 1.25rem;
+		line-height: 1.75;
+		color: var(--dim);
+	}
+
+	.muted {
+		color: var(--comment);
+	}
+
+	.dim {
+		color: var(--dim);
+	}
+
+	.mono {
+		font-family: var(--mono);
+	}
+
+	.say p {
+		font-size: 2rem;
+		line-height: 1.6;
+		font-weight: 600;
+	}
+
+	.say .sub {
+		font-size: 1.15rem;
+		font-weight: 400;
+		color: var(--dim);
+	}
+
+	/* 卡片 */
+	.card {
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+		border-radius: 18px;
+		padding: 1.2rem 1.4rem;
+		backdrop-filter: blur(6px);
+
+		h3 {
+			margin: 0 0 0.4rem;
+			font-size: 1.2rem;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.card-no {
+		font-family: var(--mono);
+		font-size: 0.85rem;
+		color: var(--bf-orange);
+		letter-spacing: 0.1em;
+	}
+
+	.card-en {
+		margin-top: 0.8rem;
+		font-family: var(--mono);
+		font-size: 0.7rem;
+		letter-spacing: 0.18em;
+		color: var(--comment);
+		text-transform: uppercase;
+	}
+
+	.pill {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4em;
+		padding: 0.25em 0.85em;
+		border-radius: 999px;
+		border: 1px solid var(--hairline-strong);
+		background: var(--surface);
+		font-size: 0.9em;
+	}
+
+	.pill-orange {
+		border-color: color-mix(in srgb, var(--bf-orange) 55%, transparent);
+		color: var(--bf-orange);
+	}
+
+	/* 沿革時間軸 */
+	.timeline {
+		display: grid;
+		gap: 0.75rem;
+	}
+
+	.tl-row {
+		display: grid;
+		grid-template-columns: 5.5rem 1fr;
+		align-items: baseline;
+		gap: 1.25rem;
+		padding-left: 1.25rem;
+		border-left: 2px solid var(--hairline);
+		position: relative;
+		padding-bottom: 0.15rem;
+	}
+
+	.tl-row::before {
+		content: "";
+		position: absolute;
+		left: -6px;
+		top: 0.55rem;
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+		background: var(--background);
+		border: 2px solid var(--bf-orange);
+	}
+
+	.tl-row.is-now::before {
+		background: var(--bf-orange);
+	}
+
+	.tl-year {
+		font-family: var(--mono);
+		font-size: 1.05rem;
+		color: var(--bf-orange);
+	}
+
+	.tl-text {
+		font-size: 1.02rem;
+		line-height: 1.6;
+	}
+
+	.tl-text .name {
+		color: var(--cyan);
+	}
+
+	/* 福利清單 */
+	.perks {
+		display: grid;
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+		gap: 0.7rem 1.5rem;
+	}
+
+	.perk {
+		display: flex;
+		align-items: flex-start;
+		gap: 0.6rem;
+		font-size: 1.02rem;
+		line-height: 1.5;
+	}
+
+	.perk-icon {
+		flex: none;
+		margin-top: 0.25rem;
+		font-size: 1.1rem;
+		color: var(--bf-blue);
+	}
+
+	/* QR：黑白高對比最好掃 */
+	.qr {
+		width: 100%;
+		max-width: 190px;
+		margin: 0 auto;
+		padding: 10px;
+		border-radius: 14px;
+		background: #fff;
+	}
+
+	.qr img {
+		width: 100%;
+		display: block;
+	}
+
+	.qr-row {
+		display: grid;
+		grid-template-columns: repeat(3, minmax(0, 1fr));
+		gap: 1.5rem;
+	}
+
+	.qr-card {
+		text-align: center;
+		padding: 1.1rem 1rem 1.2rem;
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+		border-radius: 18px;
+
+		h3 {
+			margin: 0.9rem 0 0.25rem;
+			font-size: 1.25rem;
+		}
+
+		p {
+			margin: 0;
+		}
+	}
+
+	.qr-url {
+		margin-top: 0.6rem !important;
+		font-size: 0.72rem;
+		color: var(--comment);
+		word-break: break-all;
+	}
+
+	/* 封面：文字往右讓開左下角的狐狸 */
+	.slidev-layout.cover {
+		padding-left: 12rem;
+
+		h1 {
+			font-size: 5.5rem;
+			line-height: 1.05;
+			letter-spacing: -0.01em;
+			color: var(--foreground);
+			margin-bottom: 0.5rem;
+		}
+	}
+
+	.cover-sub {
+		font-size: 2rem;
+		font-weight: 700;
+		color: var(--bf-orange);
+		margin: 0;
+	}
+
+	.cover-meta {
+		margin-top: 1.6rem;
+		font-family: var(--mono);
+		font-size: 0.95rem;
+		letter-spacing: 0.1em;
+		color: var(--dim);
+	}
+
+	.slidev-layout.section h1 {
+		font-size: 3.6rem;
+	}
+
+	.slidev-layout.fact h1 {
+		color: var(--bf-orange);
+	}
+}

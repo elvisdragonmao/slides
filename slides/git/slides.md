@@ -14,10 +14,6 @@ author: 毛哥EM
 <img src="./img/box.svg" class="absolute right-24 top-1/2 w-56 -mt-28" alt="" />
 
 ---
-src: ../global/me.md
----
-
----
 layout: statement
 class: say
 ---
@@ -26,16 +22,13 @@ class: say
 
 這份簡報可以搭配文章一起服用
 
-<div class="sub mt-6">
-<a href="https://emtech.cc/course/frontend/git/">emtech.cc/course/frontend/git</a>
+<div class="qr mt-8">
+<img src="./img/course-qr.svg" alt="文章教學 QR Code" />
 </div>
 
----
-layout: statement
-class: say
----
-
-你們用過 Git / GitHub 嗎？
+<div class="sub mt-4">
+<a href="https://emtech.cc/course/frontend/git/">emtech.cc/course/frontend/git</a>
+</div>
 
 ---
 layout: image
@@ -109,6 +102,16 @@ class: say
 </div>
 
 <p class="lead !mt-10">今天你不太可能背完 Git 所有指令。只希望下課之後，你知道：<strong>自己的修改現在到底在哪裡。</strong></p>
+
+---
+src: ../global/me.md
+---
+
+layout: statement class: say
+
+---
+
+你們用過 Git / GitHub 嗎？
 
 ---
 layout: section

@@ -72,6 +72,20 @@
 		color: var(--dim);
 	}
 
+	/* QR：白底黑碼、留白邊框，投影時才好掃 */
+	.qr {
+		width: 180px;
+		margin-inline: auto;
+		padding: 10px;
+		border-radius: 14px;
+		background: #fff;
+	}
+
+	.qr img {
+		width: 100%;
+		display: block;
+	}
+
 	.muted {
 		color: var(--comment);
 	}
