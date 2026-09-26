@@ -2030,9 +2030,7 @@ class: say
 
 你以後一定會忘記 `git remote add` 怎麼打。
 
-<p v-click>你也一定會 Google <code>git undo last commit</code>。</p>
-
-<p v-click class="muted">完全正常。工程師沒有每天坐在辦公室默背 Git Manual。</p>
+<img src="./img/remote.webp" class="mt-4 mx-auto h-96" alt="git remote add 指令" />
 
 ---
 clicks: 5
@@ -2058,31 +2056,28 @@ class: say
 
 只要這張地圖建立起來，指令忘記都查得到。
 
-<p v-click class="muted">如果這張地圖不存在，背一百條指令，也只是在施法。</p>
-
 ---
 layout: statement
 class: say
 ---
 
-最後，想講一件比較不像 Git 教學的事情。
+我們今天一直在打：
 
----
-layout: statement
-class: say
----
+<div class="inline-block text-left mt-6 mb-8 [&_code]:!text-2xl">
 
-<div class="flex justify-center gap-3 mb-10 text-xl">
-<span class="pill">git add</span>
-<span class="pill">git commit</span>
-<span class="pill">git push</span>
+```bash
+git add
+git commit
+git push
+```
+
 </div>
 
-看起來都是很冷冰冰的指令。
+<p v-click>看起來都是很冷冰冰的指令。</p>
 
 ---
 
-<div class="eyebrow text-center">打開一個大型 Repository</div>
+<p class="lead text-center">但真的開始接觸開源軟體之後，當你打開一個大型 Repository。</p>
 
 <div class="grid grid-cols-3 gap-6 mt-10 text-center">
 <div v-click>
@@ -2144,16 +2139,20 @@ class: say
 
 下一個人，就站在這些 Commit 上繼續往前走。
 
-<p v-click class="muted">Linux 是這樣。Git 自己也是這樣。</p>
+<p v-click class="muted !mt-10">Linux 是這樣。</p>
+
+<p v-click class="muted">Git 自己也是這樣。</p>
+
+<p v-click class="muted">我們每天在使用的大量 Library、Framework、編輯器、伺服器軟體，也都是這樣。</p>
 
 ---
 layout: statement
 class: say
 ---
 
-Git 最厲害的地方，也許從來不只是可以回到昨天的版本。
+所以 Git 最厲害的地方，也許從來不只是可以回到昨天的版本。
 
-<p v-click>而是讓很多彼此不認識的人，可以把自己的工作<strong>接在另一個人的工作後面</strong>。</p>
+<p v-click>而是它讓很多彼此不認識的人，可以把自己的工作<strong>接在另一個人的工作後面</strong>。</p>
 
 ---
 layout: statement
@@ -2167,42 +2166,20 @@ class: say
 <p v-click>讓一個人完成不了的東西，可以由很多人一起完成。</p>
 
 ---
-layout: statement
-class: say
----
-
-<div class="chain">
-<div><Parcel label="init" /></div>
-<div v-click><Parcel label="fix typo" /></div>
-<div v-click><Parcel label="feat" /></div>
-<div v-click><Parcel label="refactor" /></div>
-<div v-click><Parcel label="?" /></div>
-</div>
-
-<p class="!mt-12">一個 Commit，再下一個 Commit。</p>
-
-<p v-click class="muted">有人寫第一行，有人改第二行，有人修第三行。</p>
-
+clicks: 7
 ---
 
 <div class="eyebrow">Your turn</div>
 
-## 所以哪一天，如果你看到一個 Bug
+## 所以哪一天，如果你也看到一個 Bug。
 
-<p class="dim">看到文件寫得不清楚，看到一個功能覺得：<em>「欸，這個我好像可以改。」</em>那就試試看。</p>
+<p v-click="1" class="lead">看到文件寫得不清楚。</p>
 
-<Steps class="mt-8" mode="auto" :items="['Fork 它', '開一條 Branch', '改掉它', 'Commit', 'Push', '開一個 Pull Request']" />
+<p v-click="2" class="lead">看到一個功能覺得：<em>「欸，這個我好像可以改。」</em></p>
 
----
-layout: statement
-class: say
----
+<p v-click="3" class="lead">那就試試看——</p>
 
-一個人留下一點。下一個人，再留下一點。
-
-<p v-click class="!mt-10">而下一個 Commit，</p>
-
-<p v-click><strong>也許就是你的。</strong></p>
+<Steps class="mt-8" mode="reveal" :step="$clicks - 3" :items="['Fork 它', '開一條 Branch', 'Commit', 'Push', '開一個 Pull Request']" />
 
 ---
 layout: statement
