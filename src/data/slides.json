@@ -1,6 +1,14 @@
 {
 	"slides": [
 		{
+			"title": "Frontend Workshop",
+			"subtitle": "SDC 前端工作坊",
+			"description": "三小時從網頁運作原理、HTML、CSS、JavaScript 到 API 串接，最後用 GitHub Pages 讓自己的網站上線。",
+			"tags": ["web"],
+			"year": 2026,
+			"url": "/talks/frontend/"
+		},
+		{
 			"title": "AI 協作前端開發入門 上",
 			"subtitle": null,
 			"description": "從零開始做出個人網站，理解現代前端與 AI 協作流程。",
@@ -25,9 +33,9 @@
 			"url": "/talks/actions/"
 		},
 		{
-			"title": "HTML",
+			"title": "環境建置與 HTML",
 			"subtitle": null,
-			"description": "超文本標記語言基礎，學習如何建構網頁骨架與內容結構。",
+			"description": "安裝 VS Code 與 Live Server，學習用 HTML 建構網頁骨架：文字、清單、連結、圖片、表格與語意版面。",
 			"tags": ["web"],
 			"year": 2026,
 			"url": "/talks/html/"
@@ -35,7 +43,7 @@
 		{
 			"title": "CSS 基礎",
 			"subtitle": null,
-			"description": "網頁樣式與排版，學習選擇器、色彩、間距、漸層等核心概念。",
+			"description": "網頁樣式與排版，從選擇器、權重、色彩、盒子模型到 Flexbox、Position 與 Transition。",
 			"tags": ["web"],
 			"year": 2026,
 			"url": "/talks/css/"
