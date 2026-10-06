@@ -285,6 +285,11 @@
 		line-height: 1.45 !important;
 	}
 
+	.code-xs .slidev-code {
+		font-size: 0.64rem !important;
+		line-height: 1.4 !important;
+	}
+
 	.slidev-code.shiki {
 		padding: 1rem 1.25rem;
 	}
