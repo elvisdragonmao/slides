@@ -107,8 +107,9 @@ class: say
 src: ../global/me.md
 ---
 
-layout: statement class: say
-
+---
+layout: statement
+class: say
 ---
 
 你們用過 Git / GitHub 嗎？
