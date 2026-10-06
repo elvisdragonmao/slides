@@ -1,0 +1,75 @@
+@import "../_shared/kit.css";
+
+/* Frontend Workshop 專用 */
+#app #slide-content {
+	/* 時程表 */
+	.agenda {
+		display: grid;
+		grid-template-columns: 70px 1fr;
+		row-gap: 6px;
+		column-gap: 18px;
+		font-size: 1rem;
+
+		.t {
+			font-family: var(--mono);
+			color: var(--comment);
+			text-align: right;
+		}
+
+		.break {
+			color: var(--comment);
+		}
+	}
+
+	/* 檢查清單 */
+	.check li {
+		list-style: none;
+		position: relative;
+		padding-left: 1.6em;
+	}
+
+	.check li::before {
+		content: "☐";
+		position: absolute;
+		left: 0;
+		color: var(--green);
+	}
+
+	/* 步驟編號圈圈 */
+	.n {
+		display: inline-grid;
+		place-items: center;
+		width: 1.6em;
+		height: 1.6em;
+		margin-right: 0.4em;
+		border-radius: 50%;
+		background: var(--purple);
+		color: var(--ink);
+		font-family: var(--mono);
+		font-size: 0.75em;
+		font-weight: 700;
+	}
+
+	/* GitHub 介面上的按鈕長相 */
+	.gh-btn {
+		display: inline-block;
+		padding: 0.05em 0.6em;
+		border-radius: 6px;
+		background: #238636;
+		color: #fff;
+		font-size: 0.9em;
+		font-weight: 600;
+		white-space: nowrap;
+	}
+
+	.gh-btn.is-plain {
+		background: var(--surface-strong);
+		border: 1px solid var(--hairline-strong);
+		color: var(--foreground);
+	}
+
+	.logo-row img {
+		height: 96px;
+		width: auto;
+	}
+}
