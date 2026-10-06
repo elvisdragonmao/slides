@@ -330,21 +330,12 @@ const loadedInTruck = computed(() => phase.value !== "load");
 	left: calc(82% - 78px);
 }
 
-.ride-stack.is-tall .ride-box span {
-	font-size: 8.5px;
-	padding: 0 2px;
-}
-
 .ride-stack .ride-box {
 	margin-top: -4px;
 }
 
-/* 疊太高開始搖搖晃晃，箱子也縮小一點才塞得進畫面 */
+/* 疊太高開始搖搖晃晃（尺寸不變，就是要它疊到爆出畫面） */
 .ride-stack.is-tall .ride-box {
-	width: 56px;
-	height: 28px;
-	margin-top: -6px;
-
 	animation: ride-wobble 1.6s ease-in-out infinite alternate;
 	animation-delay: calc(var(--i) * -0.2s);
 }

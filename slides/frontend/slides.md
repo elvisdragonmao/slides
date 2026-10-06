@@ -7,14 +7,14 @@ author: 毛哥EM
 
 # Frontend Workshop
 
-三小時，從第一行 HTML 到網站上線 🚀
+三小時，從第一行 HTML 到網站上線
 
-毛哥EM ・ SDC
+毛哥EM ・ 交大軟體開發社
 
-<div class="absolute right-20 top-1/2 -mt-28 flex items-end gap-4 logo-row">
-<img src="./img/html.svg" alt="" />
-<img src="./img/css.svg" alt="" class="!h-20 rounded-xl" />
-<img src="./img/javascript.png" alt="" class="!h-20 rounded-xl" />
+<div class="cover-logos" aria-hidden="true">
+<img src="./img/javascript.png" class="is-js" alt="" />
+<img src="./img/css.svg" class="is-css" alt="" />
+<img src="./img/html.svg" class="is-html" alt="" />
 </div>
 
 ---
@@ -76,7 +76,7 @@ class: say
 </div>
 </div>
 
-<p class="lead !mt-8 text-center">不需要任何前端經驗。下課的時候，你會有一個<strong>自己的網址</strong>。</p>
+<p class="lead !mt-8 text-center">不需要任何前端經驗。下課以前你會做出<strong>自己上線的網站</strong>。</p>
 
 ---
 
@@ -99,7 +99,7 @@ class: say
 <div class="card">
 <h3>今天的節奏</h3>
 <p class="dim">語法講得很快，<strong>不用背</strong>。重點是知道有這些東西、知道去哪裡查。</p>
-<p class="dim !mt-3">卡住就舉手，助教會過去。</p>
+<p class="dim !mt-3">助教好用，愛用多用。</p>
 </div>
 </div>
 
@@ -198,65 +198,7 @@ class: say
 
 ---
 
-<div class="grid grid-cols-[1fr_1.4fr] gap-10 items-center">
-<div>
-
 <div class="eyebrow">Step 3</div>
-
-## 開一個資料夾
-
-<p class="lead">在桌面建一個資料夾，例如 <code>my-website</code>。</p>
-
-<p class="dim">VS Code：<strong>File → Open Folder</strong>，選剛剛的資料夾。</p>
-
-<p class="muted text-sm !mt-6">之後今天所有的檔案都放在這裡面。</p>
-
-</div>
-<img src="./img/open-folder.webp" class="shot fit" alt="VS Code 開啟資料夾" />
-</div>
-
----
-
-<div class="grid grid-cols-[1fr_1.4fr] gap-10 items-center">
-<div>
-
-<div class="eyebrow">Step 4</div>
-
-## 建第一個檔案、Go Live
-
-<ol class="lead">
-<li v-click>新增檔案 <code>index.html</code></li>
-<li v-click>輸入 <code>!</code> 再按 <kbd>Tab</kbd></li>
-<li v-click>在 <code>&lt;body&gt;</code> 裡打點東西</li>
-<li v-click>按右下角 <strong>Go Live</strong></li>
-</ol>
-
-</div>
-<img src="./img/go-live.webp" class="shot fit" alt="建立 index.html 並按 Go Live" />
-</div>
-
----
-
-<div class="grid grid-cols-[1fr_1.4fr] gap-10 items-center">
-<div>
-
-<div class="eyebrow">It's alive</div>
-
-## 網站活起來了！
-
-<p class="lead">瀏覽器會自己打開 <code>127.0.0.1:5500</code>。</p>
-
-<p class="dim">之後每次 <kbd>Ctrl</kbd> / <kbd>Cmd</kbd> + <kbd>S</kbd> 存檔，畫面就會自動更新。</p>
-
-<p v-click class="dim !mt-6">建議 VS Code 放左邊、瀏覽器放右邊，邊寫邊看。</p>
-
-</div>
-<img src="./img/live-preview.webp" class="shot fit" alt="瀏覽器顯示剛剛打的文字" />
-</div>
-
----
-
-<div class="eyebrow">Step 5</div>
 
 ## 註冊 GitHub 帳號
 
@@ -317,7 +259,7 @@ class: say
 <li>雙擊打開</li>
 </ol>
 
-<p v-click class="say !mt-6"><span class="big">一個網頁就做好了。</span></p>
+<p v-click class="say !mt-6"><span class="big">一個網頁<br>就做好了。</span></p>
 
 </div>
 <img src="./img/html-file.webp" class="shot fit" alt="把文字檔改名成 html 後用瀏覽器打開" />
@@ -402,7 +344,7 @@ class: say
 
 <div v-click class="mt-8">
 <img src="./img/servo.webp" class="h-44 mx-auto rounded-xl" alt="伺服馬達" />
-<p class="sub !mt-3">呃，不是這個東西。圖片來源：<a href="https://www.icshop.com.tw/products/368040600064">IC Shop</a></p>
+<p class="sub !mt-3">呃，不是這個東西。</p>
 </div>
 
 ---
@@ -471,7 +413,7 @@ clicks: 2
 
 <Ride vehicle="bike" :step="$clicks" url="google.com/search?q=毛哥EM" :cargo="['q=毛哥EM']" :response="['index.html']" status="200 OK" />
 
-<div class="swap text-center -mt-4">
+<div class="swap ride-caption text-center -mt-4">
 <p class="swap-item lead" :class="{ 'is-on': $clicks === 0 }">輸入網址載入網站時用的是 <strong>GET</strong>。很簡單，資料直接放在<strong>網址</strong>裡。</p>
 <p class="swap-item lead" :class="{ 'is-on': $clicks === 1 }"><code>q=毛哥EM</code>：我要找（query）毛哥EM。</p>
 <p class="swap-item lead" :class="{ 'is-on': $clicks >= 2 }">回傳的 HTML 不一定本來就存在，也可能是<strong>剛剛才產生</strong>的。</p>
@@ -485,9 +427,11 @@ clicks: 3
 
 ## 物理上，我可以疊無限高
 
-<Ride vehicle="bike" :step="0" url="google.com/search?q=毛哥EM&hl=zh-TW&page=2&safe=off&tbm=isch&…" :cargo="[['q=毛哥EM', 'hl=zh-TW'], ['q=毛哥EM', 'hl=zh-TW', 'page=2', 'safe=off'], ['q=毛哥EM', 'hl=zh-TW', 'page=2', 'safe=off', 'tbm=isch', 'start=10'], ['q=毛哥EM', 'hl=zh-TW', 'page=2', 'safe=off', 'tbm=isch', 'start=10', 'num=50']][$clicks]" />
+<Ride vehicle="bike" :step="0" url="google.com/search?q=毛哥EM&hl=zh-TW&page=2&safe=off&tbm=isch&…" :cargo="[['q=毛哥EM', 'hl=zh-TW'], ['q=毛哥EM', 'hl=zh-TW', 'page=2', 'safe=off', 'tbm=isch'], ['q=毛哥EM', 'hl=zh-TW', 'page=2', 'safe=off', 'tbm=isch', 'start=10', 'num=50', 'ie=UTF-8', 'oe=UTF-8', 'gl=tw'], ['q=毛哥EM', 'hl=zh-TW', 'page=2', 'safe=off', 'tbm=isch', 'start=10', 'num=50', 'ie=UTF-8', 'oe=UTF-8', 'gl=tw', 'tbs=qdr:y', 'lr=lang_zh', 'filter=0', 'pws=0', 'nfpr=1', 'uule=w+CA', 'sei=a8Kf', 'ved=0ahUK', 'biw=1920', 'bih=1080']][$clicks]" />
 
-<p class="dim text-center -mt-4">但瀏覽器和伺服器都會限制網址長度：Chrome 撐得住 2MB，Nginx 預設只收 8KB ~ 16KB。</p>
+<div class="swap ride-caption text-center -mt-4">
+<p class="swap-item lead is-on">但瀏覽器和伺服器都會限制網址長度：Chrome 撐得住 2MB，Nginx 預設只收 8KB ~ 16KB。</p>
+</div>
 
 ---
 clicks: 3
@@ -499,7 +443,7 @@ clicks: 3
 
 <Ride vehicle="truck" :step="$clicks" url="example.com/login" :cargo="['account=em', 'password=***']" :response="['歡迎回來']" status="200 OK" />
 
-<div class="swap text-center -mt-4">
+<div class="swap ride-caption text-center -mt-4">
 <p class="swap-item lead" :class="{ 'is-on': $clicks === 0 }">比較大、比較私密的資料，我們用 <strong>POST</strong>。</p>
 <p class="swap-item lead" :class="{ 'is-on': $clicks === 1 }">東西放進後面的貨櫃，也就是 <strong>Body</strong>。</p>
 <p class="swap-item lead" :class="{ 'is-on': $clicks === 2 }">經過的人除非把箱子撬開，不然不知道裡面裝什麼。網址上也看不到。</p>
@@ -547,17 +491,25 @@ class: say
 ---
 layout: statement
 class: say
+clicks: 5
 ---
 
 <div class="eyebrow">IP</div>
 
-要送到哪裡？
+要送到哪裡？網路上的地址叫做 <strong>IP 位址</strong>
 
-<p v-click>網路上的地址叫做 <strong>IP 位址</strong>，例如 <code>140.113.42.195</code></p>
+<div class="ip-rows">
+<div class="ip-row" :class="{ 'is-on': $clicks >= 1 }">
+<div class="ip-big"><TextMorph from="臺北市信義區信義路五段 7 號" to="台北 101" :morphed="$clicks >= 2" /></div>
+<div class="ip-sub"><TextMorph from="很難記" to="好記很多" :morphed="$clicks >= 2" /></div>
+</div>
+<div class="ip-row" :class="{ 'is-on': $clicks >= 3 }">
+<div class="ip-big mono"><TextMorph from="140.113.42.195" to="www.nycu.edu.tw" :morphed="$clicks >= 4" /></div>
+<div class="ip-sub"><TextMorph from="這一大串數字太難記了" to="但是這樣就好記很多" :morphed="$clicks >= 4" /></div>
+</div>
+</div>
 
-<p v-click class="muted">但這一大串數字太難記了。</p>
-
-<p v-click class="sub !mt-6">就像「臺北市信義區信義路五段 7 號」很難記，「台北 101」就好記多了。</p>
+<p class="sub !mt-6 transition-opacity duration-500" :class="$clicks >= 5 ? 'opacity-100' : 'opacity-0'">這種好記的名字叫做<strong>網域</strong>（Domain）。</p>
 
 ---
 clicks: 3
@@ -618,6 +570,26 @@ layout: section
 # HTML 入門
 
 <img src="./img/html.svg" class="w-20 mx-auto mt-6" alt="" />
+
+---
+
+<div class="grid grid-cols-[1fr_1.4fr] gap-10 items-center">
+<div>
+
+<div class="eyebrow">Let's go</div>
+
+## 開始寫
+
+<ol class="lead">
+<li v-click>VS Code：<strong>File → Open Folder</strong>，開一個新資料夾</li>
+<li v-click>新增檔案 <code>index.html</code></li>
+<li v-click>輸入 <code>!</code> 再按 <kbd>Tab</kbd>，在 <code>&lt;body&gt;</code> 裡打點東西</li>
+<li v-click>按右下角 <strong>Go Live</strong>，之後存檔畫面就會自動更新</li>
+</ol>
+
+</div>
+<img src="./img/go-live.webp" class="shot fit" alt="建立 index.html 並按 Go Live" />
+</div>
 
 ---
 layout: statement
@@ -1240,7 +1212,7 @@ btn.addEventListener("click", () => {
 ```
 
 </div>
-<div class="preview text-center text-2xl">
+<div class="preview text-2xl flex justify-center items-center gap-3">
 <button class="fw-like" onclick="this.nextElementSibling.textContent = +this.nextElementSibling.textContent + 1">♥ 讚</button>
 <span>0</span>
 </div>
@@ -1295,7 +1267,9 @@ clicks: 2
 
 <Ride vehicle="bike" :step="$clicks" from="你的 JavaScript" to="dog.ceo" url="dog.ceo/api/breeds/image/random" :cargo="['random']" :response="['JSON']" status="200 OK" />
 
-<p class="dim text-center -mt-4">還記得 GET 嗎？<code>fetch()</code> 預設就是騎腳踏車去拿東西。</p>
+<div class="swap ride-caption text-center -mt-4">
+<p class="swap-item lead is-on">還記得 GET 嗎？<code>fetch()</code> 預設就是騎腳踏車去拿東西。</p>
+</div>
 
 ---
 
@@ -1340,10 +1314,12 @@ class: say
 
 <div class="grid grid-cols-[1.4fr_1fr] gap-8 items-center">
 
-```js {all|1|3|4|5|6-8}
+```js {all|3|5|6|7|8-10}
+const API = "https://dog.ceo/api/breeds/image/random";
+
 async function loadDog() {
 	try {
-		const response = await fetch("https://dog.ceo/api/breeds/image/random");
+		const response = await fetch(API);
 		const data = await response.json();
 		document.querySelector("#dog").src = data.message;
 	} catch (error) {
@@ -1609,91 +1585,82 @@ layout: section
 
 # 專案實戰
 
-<p class="muted">三十分鐘，做一個屬於你的網站。</p>
+<p class="muted">三十分鐘，做一個匯率計算機，然後讓它上線。</p>
 
 ---
 
 <div class="eyebrow">Project</div>
 
-## 我的個人名片網站
+## 匯率計算機
 
-<div class="grid grid-cols-2 gap-8 mt-2">
+<div class="grid grid-cols-[1fr_1.1fr] gap-10 items-center">
 <div>
 
-<h3 class="!text-lg">基本要求</h3>
-<ul class="check lead">
-<li>HTML：名字、自我介紹、興趣清單、連結</li>
-<li>CSS：做成一張置中的卡片</li>
-<li>JavaScript：按鈕呼叫一個 API</li>
-<li>部署到 GitHub Pages</li>
-<li>把網址貼到 Discord</li>
-</ul>
+<p class="lead">輸入台幣、選幣別、按換算，用<strong>今天的匯率</strong>算出來。</p>
+
+<div class="table-clean mt-4">
+
+| 用到         | 做什麼                 |
+| ------------ | ---------------------- |
+| HTML         | 輸入框、下拉選單、按鈕 |
+| CSS          | 置中的卡片             |
+| JavaScript   | 按下去之後算錢         |
+| API          | 拿到最新匯率           |
+| GitHub Pages | 讓大家都能用           |
 
 </div>
-<div>
 
-<h3 class="!text-lg">做完了？加分題</h3>
-<ul class="dim">
-<li>滑過去的動畫 <code>:hover</code> + <code>transition</code></li>
-<li>深色模式切換按鈕 <code>classList.toggle()</code></li>
-<li>手機版排版 <code>@media (max-width: 600px)</code></li>
-<li>換一個 API：寶可夢、天氣、你的 GitHub</li>
-<li>買一個自己的網域 👀</li>
-</ul>
+<p class="muted !mt-3">右邊這個是成品，可以按按看。</p>
 
 </div>
+<CurrencyDemo />
 </div>
 
 ---
 
-<div class="eyebrow">Starter · index.html</div>
+<div class="eyebrow">Step 1 · index.html</div>
 
-## 起手式：HTML
+## 先把骨架寫出來
 
-<div class="grid grid-cols-[1.5fr_1fr] gap-8 items-center">
+<div class="grid grid-cols-[1.4fr_1fr] gap-8 items-center">
 <div class="code-sm">
 
 ```html
-<!-- 先打 ! + Tab，再在 <head> 裡加上這行 -->
+<!-- 先打 ! + Tab，<head> 裡加上 -->
 <link rel="stylesheet" href="./style.css" />
 
 <!-- <body> 裡面 -->
 <main class="card">
-	<h1>你的名字</h1>
-	<p>一句話介紹自己。</p>
-	<ul>
-		<li>興趣一</li>
-		<li>興趣二</li>
-	</ul>
-	<a href="https://github.com/你的帳號">我的 GitHub</a>
-	<button id="dog-btn">給我一隻狗</button>
-	<img id="dog" alt="隨機狗狗照片" />
+	<h1>💱 匯率計算機</h1>
+	<input id="amount" type="number" value="1000" />
+	<span>新台幣 TWD 換成</span>
+	<select id="currency">
+		<option value="USD">美金 USD</option>
+		<option value="JPY">日圓 JPY</option>
+		<option value="KRW">韓元 KRW</option>
+		<option value="EUR">歐元 EUR</option>
+	</select>
+	<button id="convert">換算</button>
+	<p id="result">—</p>
 </main>
 <script src="./script.js"></script>
 ```
 
 </div>
 <div>
-<p class="lead">檔案結構：</p>
-
-```text
-my-website
-├── index.html
-├── style.css
-└── script.js
-```
-
-<p class="dim !mt-4">三個檔案放在同一層，路徑都用 <code>./</code> 開頭。</p>
+<p class="lead">新朋友：<code>&lt;select&gt;</code> 下拉選單</p>
+<p class="dim">每個 <code>&lt;option&gt;</code> 是一個選項，<code>value</code> 是等一下 JavaScript 讀到的值。</p>
+<p class="dim !mt-4">每個要用 JavaScript 抓的東西，都先給一個 <code>id</code>。</p>
 </div>
 </div>
 
 ---
 
-<div class="eyebrow">Starter · style.css</div>
+<div class="eyebrow">Step 2 · style.css</div>
 
-## 起手式：CSS
+## 打扮成一張卡片
 
-<div class="grid grid-cols-2 gap-6 code-sm">
+<div class="grid grid-cols-3 gap-4 code-xs">
 
 ```css
 * {
@@ -1706,71 +1673,226 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background: linear-gradient(135deg, #f6d5f7, #fbe9d7);
+	background: linear-gradient(135deg, #d9f99d, #bae6fd);
 	font-family: system-ui, sans-serif;
 }
 ```
 
 ```css
 .card {
-	width: 320px;
-	padding: 24px;
+	width: 340px;
+	padding: 28px;
 	border-radius: 20px;
 	background: #fff;
-	box-shadow: 0 12px 30px -12px rgb(0 0 0 / 0.3);
+	box-shadow: 0 10px 30px #0003;
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
 	text-align: center;
 }
 
-#dog {
-	width: 100%;
-	border-radius: 12px;
+#result {
+	margin: 0;
+	font-size: 28px;
+	font-weight: 800;
+}
+```
+
+```css
+input,
+select,
+button {
+	font-size: 18px;
+	padding: 10px;
+	border-radius: 10px;
+	border: 1px solid #ccc;
+}
+
+button {
+	border: none;
+	background: #0ea5e9;
+	color: #fff;
+	font-weight: 700;
+	cursor: pointer;
+	transition: transform 0.2s;
+}
+
+button:hover {
+	transform: scale(1.05);
 }
 ```
 
 </div>
 
+<p class="muted !mt-3 text-center">複製貼上之後，顏色和大小都改成你喜歡的。</p>
+
 ---
 
-<div class="eyebrow">Starter · script.js</div>
+<div class="eyebrow">Step 3 · 先看 API</div>
 
-## 起手式：JavaScript
+## 匯率從哪裡來？
 
-<div class="grid grid-cols-[1.6fr_1fr] gap-8 items-center code-sm">
+<div class="grid grid-cols-[1.2fr_1fr] gap-8 items-center">
+<div>
 
-```js
-const btn = document.querySelector("#dog-btn");
-const dog = document.querySelector("#dog");
+<p class="lead">直接把網址貼到瀏覽器看看：</p>
 
-async function loadDog() {
-	try {
-		const response = await fetch("https://dog.ceo/api/breeds/image/random");
-		const data = await response.json();
-		dog.src = data.message;
-	} catch (error) {
-		console.error("沒拿到狗", error);
+```text
+https://open.er-api.com/v6/latest/TWD
+```
+
+```json
+{
+	"result": "success",
+	"base_code": "TWD",
+	"rates": {
+		"USD": 0.031449,
+		"JPY": 4.975923,
+		"KRW": 42.237567,
+		"EUR": 0.028095
 	}
 }
+```
 
-btn.addEventListener("click", loadDog);
+</div>
+<div>
+<p class="lead">1 台幣 = 0.031449 美金</p>
+<p class="dim">所以 1000 台幣就是 <code>1000 * 0.031449</code>。</p>
+<p v-click class="dim !mt-4">美金匯率在 <code>data.rates.USD</code>。<br />但幣別是使用者選的，要寫成 <code>data.rates[currency.value]</code>：中括號裡可以放變數。</p>
+</div>
+</div>
+
+---
+
+<div class="eyebrow">Step 4 · script.js</div>
+
+## 抓元素、聽按鈕
+
+<div class="grid grid-cols-[1.5fr_1fr] gap-8 items-center">
+
+```js
+const amount = document.querySelector("#amount");
+const currency = document.querySelector("#currency");
+const result = document.querySelector("#result");
+const btn = document.querySelector("#convert");
+
+btn.addEventListener("click", () => {
+	console.log(amount.value, currency.value);
+});
 ```
 
 <div>
-<p class="lead">按按鈕 → 派腳踏車 → 拿到 JSON → 換圖片。</p>
-<p class="dim !mt-4">想換別的 API？先 <code>console.log(data)</code> 看資料長怎樣。</p>
+<p class="lead">先確定按鈕有反應。</p>
+<p class="dim">按 <kbd>F12</kbd> 打開 Console，按下換算，應該會看到 <code>1000 USD</code>。</p>
+<p v-click class="dim !mt-4">沒看到？檢查 <code>id</code> 有沒有打錯、<code>&lt;script&gt;</code> 有沒有放在 <code>&lt;/body&gt;</code> 前面。</p>
 </div>
 </div>
 
 ---
-clicks: 4
+
+<div class="eyebrow">Step 5 · script.js</div>
+
+## 派腳踏車去拿匯率
+
+<div class="grid grid-cols-[1.5fr_1fr] gap-8 items-center">
+
+```js
+const API = "https://open.er-api.com/v6/latest/TWD";
+
+async function convert() {
+	const response = await fetch(API);
+	const data = await response.json();
+	console.log(data);
+}
+
+btn.addEventListener("click", convert);
+```
+
+<div>
+<p class="lead">按下去，Console 應該會印出一大包 JSON。</p>
+<p class="dim">展開 <code>rates</code>，找找看你選的幣別。</p>
+<p class="dim !mt-4">記得：<strong>先 <code>console.log(data)</code> 看一眼，再寫下一步。</strong></p>
+</div>
+</div>
+
 ---
 
-<div class="eyebrow">Workflow</div>
+<div class="eyebrow">Step 6 · script.js</div>
 
-## 接下來三十分鐘
+## 算錢、顯示結果
 
-<Steps class="mt-6" :step="$clicks" :items="['複製起手式', '改成你自己的內容', '用 CSS 打扮', '上傳到 GitHub', '開 Pages、貼網址']" />
+<div class="grid grid-cols-[1.5fr_1fr] gap-8 items-center">
+<div class="code-sm">
 
-<p class="lead !mt-10 text-center">卡住就舉手。<strong>Console 紅字</strong>先截圖給助教看。</p>
+```js {all|5|6|7|8-10}
+async function convert() {
+	try {
+		const response = await fetch(API);
+		const data = await response.json();
+		const rate = data.rates[currency.value];
+		const money = amount.value * rate;
+		result.textContent = `${money.toFixed(2)} ${currency.value}`;
+	} catch (error) {
+		result.textContent = "匯率抓不到，等一下再試";
+	}
+}
+```
+
+</div>
+<div class="swap">
+<p class="swap-item lead" :class="{ 'is-on': $clicks === 0 }">把 Step 5 的 <code>console.log</code> 換成真正的計算。</p>
+<p class="swap-item lead" :class="{ 'is-on': $clicks === 1 }">用選到的幣別，從 <code>rates</code> 拿出匯率。</p>
+<p class="swap-item lead" :class="{ 'is-on': $clicks === 2 }">金額 × 匯率。</p>
+<p class="swap-item lead" :class="{ 'is-on': $clicks === 3 }"><code>toFixed(2)</code> 留到小數點後兩位，再塞進 <code>#result</code>。</p>
+<p class="swap-item lead" :class="{ 'is-on': $clicks >= 4 }">網路斷了也要告訴使用者，不要讓畫面沒反應。</p>
+</div>
+</div>
+
+---
+
+<div class="eyebrow">Step 7 · 上線</div>
+
+## 部署，然後貼網址
+
+<Steps class="mt-6" mode="auto" :items="[{ t: '建 Repository', d: '你的帳號.github.io' }, { t: '上傳三個檔案', d: '網頁拖拉或 git push' }, { t: 'Settings → Pages', d: 'main / (root) → Save' }, { t: '等綠色勾勾', d: 'Actions 分頁' }, { t: '貼到 Discord', d: '讓大家換算看看' }]" />
+
+<p class="lead !mt-10 text-center">跟剛剛教的部署步驟一模一樣，忘了就往回翻。</p>
+
+---
+
+<div class="eyebrow">Your turn</div>
+
+## 換你了
+
+<div class="grid grid-cols-2 gap-8 mt-2">
+<div>
+
+<h3 class="!text-lg">基本要求</h3>
+<ul class="check lead">
+<li>照著 Step 1 ~ 6 做出能動的匯率計算機</li>
+<li>改成你喜歡的顏色和排版</li>
+<li>部署到 GitHub Pages</li>
+<li>把網址貼到 Discord</li>
+</ul>
+
+</div>
+<div>
+
+<h3 class="!text-lg">做完了？挑戰題</h3>
+<ul class="dim">
+<li>不用按按鈕，打字的時候就算好（<code>input</code> 事件）</li>
+<li>加更多幣別：看看 <code>data.rates</code> 裡還有什麼</li>
+<li>反過來：外幣換台幣</li>
+<li>⇄ 交換按鈕</li>
+<li>顯示匯率更新時間 <code>data.time_last_update_utc</code></li>
+<li>只抓一次匯率存起來，不要每按一次就派一台腳踏車</li>
+<li>輸入空白或負數時給提示</li>
+</ul>
+
+</div>
+</div>
+
+<p class="muted !mt-6 text-center">卡住就舉手。<strong>Console 紅字</strong>先截圖給助教看。</p>
 
 ---
 layout: statement
@@ -1791,22 +1913,17 @@ class: say
 # Q & A
 
 ---
-src: ../global/cc.md
----
-
----
 layout: statement
+title: Credits
+description: 本投影片由毛哥EM製作，採用創用CC姓名標示 4.0 國際授權
 ---
 
-<div class="eyebrow">素材來源</div>
+本投影片由 [毛哥EM](https://elvismao.com/) 製作  
+公開於[毛哥EM公開簡報](https://slides.elvismao.com)（可自行下載成 PDF）  
+採用創用 CC「[姓名標示 4.0 國際](https://creativecommons.org/licenses/by/4.0/deed.zh-hant)」授權
 
-<p class="text-lg">插圖：<a href="https://www.flaticon.com/free-icons/law" title="law icons">Law icons created by smashingstocks - Flaticon</a></p>
+<img src="./img/cc.svg" alt="CC" class="mx-auto" />
 
-<p class="muted text-sm !mt-2">部分圖示經裁切、調整後使用</p>
+[毛哥EM資訊密技](https://emtech.cc/)
 
-<div class="flex justify-center items-end gap-8 mt-8">
-<img src="./img/bike.svg" class="h-14" alt="" />
-<img src="./img/imac.svg" class="h-14" alt="" />
-<img src="./img/server.svg" class="h-14" alt="" />
-<img src="./img/file.svg" class="h-14" alt="" />
-</div>
+<p class="muted text-sm !mt-6">插圖：<a href="https://www.flaticon.com/free-icons/law" title="law icons">Law icons created by smashingstocks - Flaticon</a>（部分經裁切、調整）</p>
