@@ -1,6 +1,14 @@
 {
 	"slides": [
 		{
+			"title": "Wi-Fi Security",
+			"subtitle": "BambooFox 社課",
+			"description": "三小時從 Wi-Fi 連線、WPA2 與 WPA3 到 HTTPS，搭配本機 TLS 實測、圖片完整性練習和課堂測驗。",
+			"tags": ["security"],
+			"year": 2026,
+			"url": "/talks/wifi-security/"
+		},
+		{
 			"title": "Frontend Workshop",
 			"subtitle": "SDC 前端工作坊",
 			"description": "三小時從網頁運作原理、HTML、CSS、JavaScript 到 API 串接，最後用 GitHub Pages 讓自己的網站上線。",

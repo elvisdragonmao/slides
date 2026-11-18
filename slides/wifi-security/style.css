@@ -1,0 +1,158 @@
+@import "../_shared/kit.css";
+
+#app #slide-content {
+	.radio-cover {
+		position: absolute;
+		right: 5rem;
+		top: 8rem;
+		width: 19rem;
+		height: 19rem;
+		display: grid;
+		place-items: center;
+		pointer-events: none;
+	}
+
+	.radio-cover::before,
+	.radio-cover::after,
+	.radio-cover span {
+		content: "";
+		position: absolute;
+		aspect-ratio: 1;
+		border: 1px solid rgb(80 250 123 / 22%);
+		border-radius: 50%;
+	}
+
+	.radio-cover::before {
+		width: 85%;
+	}
+
+	.radio-cover::after {
+		width: 65%;
+	}
+
+	.radio-cover span {
+		width: 45%;
+	}
+
+	.radio-cover svg {
+		width: 8rem;
+		height: 8rem;
+		color: var(--green);
+	}
+
+	.wifi-path {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: 0.5rem;
+		margin-block: 1.35rem;
+	}
+
+	.wifi-path strong {
+		padding: 0.55rem 0.8rem;
+		background: var(--surface);
+		border: 1px solid var(--hairline-strong);
+		border-radius: 0.6rem;
+	}
+
+	.wifi-path span,
+	.lab-caption {
+		color: var(--dim);
+	}
+
+	.wifi-stack {
+		display: grid;
+		gap: 0.5rem;
+		margin-block: 1rem;
+	}
+
+	.wifi-stack > div {
+		display: grid;
+		grid-template-columns: 11rem 1fr;
+		gap: 1rem;
+		padding: 0.52rem 0.75rem;
+		border-left: 3px solid var(--green);
+		background: var(--surface);
+	}
+
+	.wifi-stack > div:nth-child(even) {
+		border-left-color: var(--purple);
+	}
+
+	.wifi-shot {
+		display: block;
+		width: auto;
+		max-width: 100%;
+		max-height: 350px;
+		object-fit: contain;
+		margin-inline: auto;
+	}
+
+	.lab-pair {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem;
+		margin-top: 1.2rem;
+	}
+
+	.lab-pair figure,
+	.wifi-evidence figure {
+		margin: 0;
+		min-width: 0;
+	}
+
+	.lab-pair .shot,
+	.wifi-evidence .shot {
+		box-shadow: none;
+	}
+
+	.lab-pair img {
+		display: block;
+		width: 100%;
+	}
+
+	.lab-caption {
+		font-size: 0.86rem;
+		line-height: 1.4;
+		margin-top: 0.55rem;
+	}
+
+	.wifi-result {
+		display: grid;
+		grid-template-columns: minmax(0, 2.6fr) minmax(0, 1fr);
+		align-items: center;
+		gap: 1.4rem;
+	}
+
+	.wifi-result dt {
+		color: var(--green);
+		font-weight: 700;
+		margin-top: 0.8rem;
+	}
+
+	.wifi-result dd {
+		margin: 0.2rem 0 0;
+		line-height: 1.45;
+	}
+
+	.wifi-quiz {
+		background: var(--surface);
+		border-left: 3px solid var(--purple);
+		padding: 0.6rem 1rem;
+		margin-block: 0.7rem;
+	}
+
+	.wifi-quiz p {
+		margin: 0.3rem 0;
+	}
+
+	.wifi-links li {
+		margin: 0.36rem 0;
+	}
+
+	.wifi-answer {
+		color: var(--green);
+		line-height: 1.5;
+		margin: 0.8rem 0 0;
+	}
+}
