@@ -1,0 +1,195 @@
+@import "../_shared/kit.css";
+
+/* 棚拍攝影入門專用 */
+#app #slide-content {
+	/* 步驟編號圈圈 */
+	.n {
+		display: inline-grid;
+		place-items: center;
+		width: 1.6em;
+		height: 1.6em;
+		margin-right: 0.4em;
+		border-radius: 50%;
+		background: var(--purple);
+		color: var(--ink);
+		font-family: var(--mono);
+		font-size: 0.75em;
+		font-weight: 700;
+	}
+
+	.steps li {
+		list-style: none;
+		margin: 0.45rem 0;
+	}
+
+	/* 感光元件面積：等比例的兩個長方形，1px = 0.1mm */
+	.sensors {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		gap: 3rem;
+	}
+
+	.sensor {
+		display: grid;
+		place-items: center;
+		border-radius: 6px;
+		font-family: var(--mono);
+		font-size: 0.85rem;
+	}
+
+	.sensor.is-ff {
+		width: 359px;
+		height: 240px;
+		background: hsl(265 89% 78% / 0.18);
+		border: 2px solid var(--purple);
+	}
+
+	.sensor.is-phone {
+		width: 100px;
+		height: 76px;
+		background: hsl(31 100% 71% / 0.18);
+		border: 2px solid var(--orange);
+	}
+
+	.sensor-label {
+		margin-top: 0.6rem;
+		text-align: center;
+		color: var(--dim);
+	}
+
+	/* 鏡頭開口：等比例的圓，1px ≈ 0.2mm */
+	.pupils {
+		display: flex;
+		align-items: flex-end;
+		justify-content: center;
+		gap: 4rem;
+	}
+
+	.pupil {
+		border-radius: 50%;
+		background: radial-gradient(circle at 35% 35%, hsl(231 15% 40%), hsl(231 15% 12%));
+		border: 3px solid var(--hairline-strong);
+		margin-inline: auto;
+	}
+
+	/* 光圈：數字越小，洞越大 */
+	.apertures {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 1rem;
+
+		> div {
+			text-align: center;
+		}
+
+		.hole {
+			margin: 0 auto 0.6rem;
+			border-radius: 50%;
+			background: var(--yellow);
+			box-shadow: 0 0 0 6px var(--surface);
+		}
+
+		.mono {
+			color: var(--dim);
+		}
+	}
+
+	/* 三分法格線 */
+	.thirds {
+		position: relative;
+		aspect-ratio: 3 / 2;
+		width: 100%;
+		max-width: 480px;
+		margin-inline: auto;
+		border-radius: 12px;
+		background: var(--surface);
+		border: 1px solid var(--hairline);
+		background-image:
+			linear-gradient(
+				to right,
+				transparent calc(33.33% - 1px),
+				var(--hairline-strong) calc(33.33% - 1px),
+				var(--hairline-strong) 33.33%,
+				transparent 33.33%,
+				transparent calc(66.66% - 1px),
+				var(--hairline-strong) calc(66.66% - 1px),
+				var(--hairline-strong) 66.66%,
+				transparent 66.66%
+			),
+			linear-gradient(
+				to bottom,
+				transparent calc(33.33% - 1px),
+				var(--hairline-strong) calc(33.33% - 1px),
+				var(--hairline-strong) 33.33%,
+				transparent 33.33%,
+				transparent calc(66.66% - 1px),
+				var(--hairline-strong) calc(66.66% - 1px),
+				var(--hairline-strong) 66.66%,
+				transparent 66.66%
+			);
+
+		.dot {
+			position: absolute;
+			width: 14px;
+			height: 14px;
+			margin: -7px 0 0 -7px;
+			border-radius: 50%;
+			background: var(--orange);
+			box-shadow: 0 0 0 6px hsl(31 100% 71% / 0.25);
+		}
+	}
+
+	/* 曝光三要素 */
+	.trio {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 1rem;
+
+		.card {
+			text-align: center;
+		}
+
+		.card-icon {
+			font-size: 2.2rem;
+		}
+	}
+
+	/* 色溫色帶 */
+	.kelvin {
+		height: 22px;
+		border-radius: 999px;
+		background: linear-gradient(to right, #ff8a1f, #ffb46b, #ffe0b8, #fff6ec, #e6efff, #a9c6ff);
+	}
+
+	.kelvin-scale {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 0.5rem;
+		font-family: var(--mono);
+		font-size: 0.85rem;
+		color: var(--dim);
+	}
+
+	/* 三種背景的色塊 */
+	.swatch {
+		width: 100%;
+		height: 90px;
+		border-radius: 12px;
+		margin-bottom: 0.8rem;
+		border: 1px solid var(--hairline-strong);
+	}
+
+	.swatch.is-white {
+		background: #f4f4f2;
+	}
+
+	.swatch.is-black {
+		background: #0b0b0c;
+	}
+
+	.swatch.is-green {
+		background: #19b34a;
+	}
+}

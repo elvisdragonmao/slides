@@ -9,6 +9,14 @@
 			"url": "/talks/wifi-security/"
 		},
 		{
+			"title": "棚拍攝影入門",
+			"subtitle": "陽明交大創創工坊",
+			"description": "用 Canon EOS 6D Mark II 在白、黑、綠背景攝影棚學攝影：相機和手機的差別、Auto 拍照、構圖、光圈快門 ISO，到 Lightroom 調色與輸出。",
+			"tags": ["design"],
+			"year": 2026,
+			"url": "/talks/photography/"
+		},
+		{
 			"title": "Frontend Workshop",
 			"subtitle": "SDC 前端工作坊",
 			"description": "三小時從網頁運作原理、HTML、CSS、JavaScript 到 API 串接，最後用 GitHub Pages 讓自己的網站上線。",
